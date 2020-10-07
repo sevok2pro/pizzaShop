@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run lint && webpack --mode=production",
-    "start:develop": "webpack-dev-server --mode=development",
-    "lint": "eslint webClient --ext .ts,.tsx",
-    "lint:fix": "eslint webClient --ext .ts,.tsx --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:webClient": "webpack --mode=production --env.app=webClient",
+    "start:webClient:develop": "webpack-dev-server --mode=development --env.app=webClient",
+    "lint:webClient": "eslint webClient --ext .ts,.tsx",
+    "lint:webClient:fix": "eslint webClient --ext .ts,.tsx --fix",
+    "build:pizzaService": "webpack --mode=development --env.app=pizzaService --target=node",
+    "run:pizzaService": "npm run build:pizzaService && node ./dist/pizzaService/pizzaService.js"
   },
   "repository": {
     "type": "git",
