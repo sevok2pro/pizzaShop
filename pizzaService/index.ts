@@ -1,6 +1,5 @@
 import http from 'http';
 import config from './config.json';
-import { configure } from './configure';
 import { pizzaListHandler } from './handlers/pizzaList';
 
 const handlersMap = {
@@ -31,6 +30,5 @@ function startServer() {
 }
 
 (async () => {
-  await configure();
   startServer();
 })();
