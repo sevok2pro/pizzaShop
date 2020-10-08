@@ -1,20 +1,13 @@
 import { combineReducers } from 'redux';
-import { createReducer } from 'deox';
-import { initAction } from '../actions/init';
-
-const mainDefaultState: {isInit: boolean} = { isInit: false };
-
-const main = createReducer(mainDefaultState, (handle) => [
-  handle(initAction, (prevState) => ({
-    ...prevState,
-    isInit: true,
-  })),
-]);
+import entitiesReducer, { EntitiesState } from './entities';
+import pizzaListReducer, { PizzaListState } from './pizzaList';
 
 export interface LandingState {
-    main: typeof mainDefaultState
+    entities: EntitiesState,
+    pizzaList: PizzaListState,
 }
 
 export default combineReducers({
-  main,
+  entities: entitiesReducer,
+  pizzaList: pizzaListReducer,
 });

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { IModule, DynamicModuleLoader } from 'redux-dynamic-modules';
 import { Provider } from 'react-redux';
 import { reducerKey } from './selectors';
-import landingReducer, { LandingState } from './reducer';
+import landingReducer from './reducer';
 import { init } from './actions/init';
 import Root from './components/Root';
 import store, { AppState } from '../../store';

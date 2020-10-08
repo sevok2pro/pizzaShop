@@ -7,7 +7,15 @@ const { Entity } = schema;
 const ingredients = new Entity('ingredients', {}, { idAttribute: '_id' });
 const pizzas = new Entity('pizzas', { ingredients: [ingredients] }, { idAttribute: '_id' });
 
-export async function pizzaListHandler() {
+export interface PizzaListResponse {
+  result: string[],
+  entities: {
+    ingredients: Record<string, Ingredients>,
+    pizzas: Record<string, Pizzas>,
+  }
+}
+
+export async function pizzaListHandler(): Promise<PizzaListResponse> {
   const { close, db } = await makeMongoClient();
   const items = await db.collection<Pizzas & {ingredients: Ingredients[]}>('pizzas').aggregate([
     {
