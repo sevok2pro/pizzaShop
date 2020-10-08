@@ -1,8 +1,15 @@
+import { normalize, schema } from 'normalizr';
 import { makeMongoClient } from '../mongoClient';
+import { Ingredients, Pizzas } from '../../shared/entities';
+
+const { Entity } = schema;
+
+const ingredients = new Entity('ingredients', {}, { idAttribute: '_id' });
+const pizzas = new Entity('pizzas', { ingredients: [ingredients] }, { idAttribute: '_id' });
 
 export async function pizzaListHandler() {
   const { close, db } = await makeMongoClient();
-  const items = await db.collection('pizzas').aggregate([
+  const items = await db.collection<Pizzas & {ingredients: Ingredients[]}>('pizzas').aggregate([
     {
       $lookup: {
         from: 'ingredients',
@@ -14,5 +21,5 @@ export async function pizzaListHandler() {
   ]);
   const arr = await items.toArray();
   close();
-  return arr;
+  return normalize(arr, [pizzas]);
 }
