@@ -2,16 +2,16 @@ import React, { FC } from 'react';
 import { IModule, DynamicModuleLoader } from 'redux-dynamic-modules';
 import { Provider } from 'react-redux';
 import { reducerKey } from './selectors';
-import landingReducer from './reducer';
+import navigationBarReducer from './reducer';
 import { init } from './actions/init';
 import Root from './components/Root';
 import store, { AppState } from '../../store';
 
-function getLandingPageModule(): IModule<Partial<AppState>> {
+function getNavigationBarModule(): IModule<Partial<AppState>> {
   return {
     id: reducerKey,
     reducerMap: {
-      [reducerKey]: landingReducer,
+      [reducerKey]: navigationBarReducer,
     },
     initialActions: [init() as any],
   };
@@ -19,7 +19,7 @@ function getLandingPageModule(): IModule<Partial<AppState>> {
 
 const ModuleComponent: FC = () => (
   <Provider store={store}>
-    <DynamicModuleLoader modules={[getLandingPageModule()]}>
+    <DynamicModuleLoader modules={[getNavigationBarModule()]}>
       <Root />
     </DynamicModuleLoader>
   </Provider>

@@ -1,0 +1,10 @@
+:global(body) {
+    margin: 0;
+    background-color: rgba(249,190,31, 0.15);
+    font-family: 'Arial', 'sans-serif' ;
+}
+
+.contentContainer {
+    max-width: 1024px;
+    margin: auto;
+}

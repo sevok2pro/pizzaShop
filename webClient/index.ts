@@ -1,10 +1,10 @@
 import { render } from 'react-dom';
-import landingWidget from './widgets/landing';
+import { RootForRender } from './components/Root';
 
 const entryNode = document.createElement('div');
 document.body.appendChild(entryNode);
 
 render(
-  landingWidget,
+  RootForRender,
   entryNode,
 );
