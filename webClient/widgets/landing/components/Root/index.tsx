@@ -3,12 +3,7 @@ import PizzaList from '../../containers/pizzaList';
 
 const Root: FC = () => (
   <div>
-    <div>
-      pizza shop header
-    </div>
-    <div>
-      <PizzaList />
-    </div>
+    <PizzaList />
   </div>
 );
 

@@ -7,4 +7,5 @@
 .contentContainer {
     max-width: 1024px;
     margin: auto;
+    padding-top: 12px;
 }
