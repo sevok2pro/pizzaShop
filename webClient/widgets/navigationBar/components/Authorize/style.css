@@ -1,0 +1,65 @@
+.root {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentContainer {
+    width: 300px;
+    padding: 12px;
+    background-color: white;
+}
+
+.authTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.authTab {
+    outline: none;
+    border: solid thin lightgray;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+
+.authTab.isActive {
+    background-color: rgba(249,190,31, 0.15);
+    border-color: rgb(249,190,31);
+}
+
+.sigInFormRoot {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginLabel {
+    margin-top: 16px;
+}
+
+.loginInput {
+    margin-top: 8px;
+}
+
+.passwordLabel {
+    margin-top: 8px;
+}
+
+.passwordInput {
+    margin-top: 8px;
+}
+
+.submitButton {
+    margin-top: 16px
+}
+
+.close {
+    margin-top: 8px;
+}

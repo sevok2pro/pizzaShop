@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { reducerKey } from './selectors';
 import navigationBarReducer from './reducer';
 import { init } from './actions/init';
-import Root from './components/Root';
+import Root from './containers/root';
 import store, { AppState } from '../../store';
 
 function getNavigationBarModule(): IModule<Partial<AppState>> {
