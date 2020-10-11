@@ -11,15 +11,15 @@ roadmap:
 1. run web client "hello world"
 1. add pizza service
 1. connect pizza service to web application
-<--------------- i`am here
 1. make beautiful pizza list component
 1. add cart button for buy
+1. add beautiful navigation bar for navigate to pizzaShop and cart
+1. add auth component and mechanism for call it
+<--------------- i`am here
 1. add cart service
 1. connect cart button to cart service
-1. add beautiful navigation bar for navigate to pizzaShop and cart
 1. add beautiful cart page
 1. add order cart interface and upgrade cart service for order (do not forget about delivery cost)
-1. add auth component and mechanism for call it
 1. add userDataService for authenticate and make login and logout
 1. add user page for define delivery address, default currency
 1. add autocomplete by userData on order cart
